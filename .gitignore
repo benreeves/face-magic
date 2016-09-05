@@ -1,0 +1,9 @@
+*~
+*.swp
+*.swo
+.sass-cache
+
+venv
+venv/
+__pycache__
+lib/dlib/*.*

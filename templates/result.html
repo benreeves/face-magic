@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block html %}<html class="default-bg" lang="en">{% endblock %}
+{% block title %}Results{% endblock %}
+{% block head %}
+	{{ super() }}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="jumbotron">
+		<h2>Aaaaand the algorithms say!</h2>
+	</div>
+	<p>{{message}}</p>
+	{% if fig != '' %}
+	<h3>Here is a visual for your viewing pleasure</h3>
+	<img src="../static/img/tmp/{{fig}}" class="img-responsive center-block"></img>
+	{% endif %}
+</div>
+
+{% endblock %}

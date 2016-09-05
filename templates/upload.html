@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block html %}<html class="default-bg" lang="en">{% endblock %}
+{% block title %}About{% endblock %}
+{% block head %}
+	{{ super() }}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="jumbotron">
+		<h2 class="center subtitle">Choose an image below! These are randomly selected from our archives so we don't know what will happen!</div>
+	</div>
+	<div class="container sample-container margin-20">
+		{% for sample in samples %}
+			{% if loop.index % 2 == 0 %}
+				<div class="row margin-20">
+			{% endif %}
+
+				<div class="col-md-6">
+					<img onclick="callEvaluate(this.src)" src="../static/img/samples/{{sample}}" class="face img-responsive img-circle center-block"></img>
+				</div>
+
+			{% if loop.index % 2 == 0 %}
+				</div>
+			{% endif %}
+		{% endfor %}
+	</div>
+	<div class="row-fluid">
+		<div class="col-md-4 col-md-offset-4 center">
+			<button type="button" data-toggle="modal" data-target="#uploadModal" class="upload">Upload your own!</a>
+		</div>
+	</div>
+
+</div>
+
+<!-- Modal -->
+<div id="uploadModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4>Upload a photo from your hard drive!</h4>
+			</div>
+			<div class="modal-body">
+				<form action="" method=post enctype=multipart/form-data>
+					<p><input type=file name=file><br/>
+						 <input type=submit value=Upload>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--Results Modal-->
+<div id="resultModal" class="modal fade" role="dialog"></div>
+
+<script src="../static/js/submitFace.js" type="text/javascript" charset="utf-8"></script>
+
+{% endblock %}
