@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block html %}<html class="full" lang="en">{% endblock %}
+	{% block title %}About{% endblock %}
+	{% block head %}
+	{{ super() }}
+	{% endblock %}
+
+	{% block content %}
+	<!-- Page Content -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-sm-12">
+				<h1>Face Magic - People Skills for Computers!</h1>
+			</div>
+			<div class="col-md-6 col-sm-12">
+				<p>We created a sample deep learning computer vision project using convolutional neural networks to predict the age and gender of a person based on their picture. The system was built in python leveraging keras, tensorflow, and the awesome dlib libraries. </p>
+			</div>
+		</div>
+		<!-- /.row -->
+	</div>
+	<!-- /.container -->
+
+	<div class="flexbox">
+		<div class="wrapper">
+			<div class="center-button"><a href="/eval">TRY IT OUT</a></div>
+		</div>
+	</div>
+
+	{% endblock %}
